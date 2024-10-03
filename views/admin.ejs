@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecom | Admin</title>
+    <style>
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        form {
+            display: none;
+            flex-direction: column;
+            padding: 10px 20px;
+            width: 30vw;
+            gap: 5px;
+            border: 1.5px solid blue;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input,
+        label {
+            width: 100%;
+        }
+
+        input {
+            padding: 10px 5px;
+            font-size: 1rem;
+            font-weight: 300;
+
+        }
+
+        label {
+            text-align: left;
+            font-weight: bolder;
+            color: brown;
+        }
+
+        button {
+            width: 15vw;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .show{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Ecom Admin Panel</h1>
+        <button id="add">Add Product</button>
+        <form action="/admin/addproduct" method="post" class="addproduct">
+            <!-- <label for="id">Product ID</label>
+            <input type="number" name="productid" id="id"> -->
+            <label for="image">Image</label>
+            <input type="text" name="image" id="image" required>
+            <label for="category">Category</label>
+            <input type="text" name="category" id="" maxlength="45">
+            <label for="sub_category">Sub-Category</label>
+            <input type="text" name="sub_category" id="" maxlength="45">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" maxlength="55" required>
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price" required>
+            <button type="submit">Add</button>
+        </form>
+        <form action="/admin/product/id" method="post">
+            <input type="text" placeholder="Enter productid to inorder to update a specific Product.">
+            <button id="update">Update Product</button>
+        </form>
+        <form action="/admin/updateproduct" method="post" class="updateproduct">
+
+        </form>
+        <button id="remove">Remove Product</button>
+        <form action="/admin/removeproduct" method="post" class="removeproduct">
+
+        </form>
+    </main>
+    <script>
+        document.querySelector("#add").addEventListener("click",()=>{
+            document.querySelector(".addproduct").classList.toggle("show")
+        });
+        document.querySelector("#update").addEventListener("click",()=>{
+            document.querySelector(".updateproduct").classList.toggle("show")
+        });
+        document.querySelector("#remove").addEventListener("click",()=>{
+            document.querySelector(".removeproduct").classList.toggle("show")
+        });
+
+    </script>
+</body>
+
+</html>
